@@ -1,0 +1,538 @@
+<section>
+
+<h1><strong>DecaStore</strong></h1>
+
+<h2>Technical Road Map</h2>
+
+<p>by Serguei Cambour<br>
+February 2018</p>
+
+</section>
+<section>
+
+<p><img src="images/full-stack.png" alt="Back-end vs Front-end"></p>
+
+</section>
+<section>
+
+<p><img src="images/many_choices.jpeg" alt="So many choices"></p>
+<h3>Comment choisir parmi les frameworks existants ?</h3>
+
+</section>
+<section>
+
+<p><img src="images/top_backend.jpg" alt="Top backend"></p>
+
+</section>
+<section>
+
+<p><img src="images/choose_framework.jpeg" alt="Choose JS Framework"></p>
+<h3>Le choix est vraiment trooooop vaste …</h3>
+
+</section>
+<section>
+
+<h3>The back-end winner is</h3>
+<p><img src="images/ror_winner.jpg" alt="Rails wins"></p>
+
+<p>Plus de 4,500 personnes ont déjà contribué au code de <a href="http://rubyonrails.org/">Ruby on Rails</a>.</p>
+
+</section>
+<section>
+
+<p><img src="images/rails-logo.png" alt="Ruby on Rails"></p>
+<ul>
+  <li>Server-side web application framework écrit en <strong>Ruby</strong>
+</li>
+  <li>Crée par <strong>David Heinemeier Hansson</strong> (aka <em>DHH</em>)</li>
+  <li>Première version: le <strong>13 décembre 2005</strong>
+</li>
+  <li>Dernière version: <strong>5.1.5</strong>, sortie le  <strong>14 février 2018</strong>
+</li>
+</ul>
+
+</section>
+<section>
+
+<p><img src="images/ruby.png" alt="Ruby Language"><br>
+<em>Ruby is simple in appearance, but is very complex inside, just like our human body</em>.</p>
+<ul>
+  <li>Object-oriented, imperative, functional, reflective</li>
+  <li>OS: Cross-platform</li>
+  <li>Créé par <strong>Yukihiro Matsumoto</strong> (aka <em>Matz</em>), le 21 décembre 1995 (comme Java <img class="emoji" alt=":smile:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png"> )</li>
+  <li>
+<a href="http://ruby-doc.org/core-2.5.0/">Dernière version</a>: <strong>2.5.0</strong>,  sortie le 25 décembre 2017</li>
+</ul>
+
+</section>
+<section>
+
+<p><img src="images/rails-logo.png" alt="Ruby on Rails"></p>
+<ul>
+  <li>une très bonne documentation</li>
+  <li>pas de XML(!)</li>
+  <li>convention over configuration</li>
+  <li>utilise Ruby</li>
+  <li>énorme répo de gems (petites librairies) sur <a href="https://rubygems.org/">RubyGems</a> -a package management framework pour Ruby.</li>
+</ul>
+
+</section>
+<section>
+
+<p><img src="images/rails_guides.png" alt="Rails guides"><br>
+<a href="http://guides.rubyonrails.org/">Rails Guides</a> Guides RoR pour dévenir vite productif avec Rails</p>
+
+</section>
+<section>
+
+<p><img src="images/rails_api.png" alt="Rails API"><br>
+<a href="http://api.rubyonrails.org/">Rails API documentation</a> pour plus d’infos sur modules, classes, méthodes.</p>
+
+</section>
+<section>
+
+<p><img src="images/rails_everything.png" alt="Rails is everything"><br>
+La colonne vertébrale d’une application Rails est le pattern <strong>Model-View-Controller</strong> qui organize l’application en 3 couches principales:</p>
+
+</section>
+<section>
+
+<p><img src="images/rails_mvc.png" alt="Rails MVC"></p>
+<ul>
+  <li>Le <strong>Model</strong> est géré principalement par Active Record</li>
+  <li>Le <strong>Controller</strong> est géré par Action Controller</li>
+  <li>La <strong>View</strong> par Action View, présenté ensemble comme Action Pack</li>
+</ul>
+
+</section>
+<section>
+
+<p><img src="images/small_rails.png" alt="Rails small logo"><br>
+A part ces 3 <em>amigos</em>, Rails est encore livré avec:</p>
+<ul>
+  <li>
+<strong>Action Mailer</strong>, pour envoyer des mails en HTML ou plein text.</li>
+  <li>
+<strong>Action Cable</strong> pour fournir “live updates” des pages via WebSockets</li>
+  <li>
+<strong>Active Support</strong> améliore Ruby standard library avec méthodes et classes supplémentaires.</li>
+</ul>
+
+</section>
+<section>
+
+<p><img src="images/rails-logo.png" alt="Ruby on Rails"><br>
+Mais il y a  encore:</p>
+<ul>
+  <li>
+<strong>IRB</strong> (Interactive Ruby shell) pour exécuter Ruby code dans le Terminal</li>
+  <li>
+<strong>Rails Console</strong> pour ‘jouer’ avec code Rails, requêtes SQL dans le Terminal</li>
+  <li>
+<strong>Database Migrations</strong>: pour mettre à jour, modifier votre schema et tables BDD en Ruby</li>
+</ul>
+
+</section>
+<section>
+
+<p>Pas de <strong>XML</strong>, votre configuration vit dans des fichiers  <strong>YAML</strong>:</p>
+<pre><code># database.yml
+default: &amp;default
+  adapter: postgresql
+  encoding: unicode
+  user: postgres
+  password:
+  pool: 5
+
+development:
+  &lt;&lt;: *default
+  database: decastore_development
+test:
+  &lt;&lt;: *default
+  database: decastore_test
+production:
+  &lt;&lt;: *default
+  database: decastore_production
+  username: decastore
+  password: &lt;%= ENV['DECASTORE_DATABASE_PASSWORD'] %&gt;
+</code></pre>
+
+</section>
+<section>
+
+<p>Les paramètres de votre application sont dans le fichier <code>application.yml</code></p>
+<pre><code># application.yml provided by Figaro gem
+development:
+  oauth_site: 'https://preprod.idpdecathlon.oxylane.com/as/authorization.oauth2'
+  client_id: 'decastore'
+  client_secret: '2e53Wu3PLmUqW1CfzStdsJUHM2LltvwFPU6gogDPe5w19eTi5FET6RJCqiHVDh1L'
+  proxy_url: 'http://gateway.zscaler.net'
+  proxy_port: '80'
+
+test:
+  oauth_site: 'https://preprod.idpdecathlon.oxylane.com/as/authorization.oauth2'
+  client_id: 'decastore'
+  client_secret: '2e53Wu3PLmUqW1CfzStdsJUHM2LltvwFPU6gogDPe5w19eTi5FET6RJCqiHVDh1L'
+  proxy_url: 'http://gateway.zscaler.net'
+  proxy_port: '80'
+</code></pre>
+
+</section>
+<section>
+
+<p><img src="images/dependencies_nightmare.png" alt="Dependencies"></p>
+<h3>Comment sont gérées les dépendances ?</h3>
+
+</section>
+<section>
+
+<p><img src="images/stay_cool.jpeg" alt="Stay Cool"></p>
+
+</section>
+<section>
+
+<p><img src="images/bundler.jpeg" alt="Bundler"><br>
+<strong>Bundler</strong> s’en occupe! Toutes les dépendances sont définiés dans le fichier <code>Gemfile</code>:</p>
+<pre><code># Gemfile
+ruby '2.4.0'
+
+gem 'rails', '~&gt; 5.1.4'
+gem 'pg',                         '~&gt; 0.21.0'
+gem 'figaro',                     '~&gt; 1.1.1'
+gem 'jwt',                        '~&gt; 2.1'
+gem 'geocoder',                   '~&gt; 1.4', '&gt;= 1.4.4'
+gem 'active_model_serializers',   '~&gt; 0.10.6'
+gem 'rest-client',                '~&gt; 2.0', '&gt;= 2.0.2'
+.....
+</code></pre>
+
+</section>
+<section>
+
+<p><img src="images/bundler.jpeg" alt="Bundler"><br>
+Chaque gem est declaré dans son groupe d’environnement:</p>
+<pre><code># Gemfile
+group :development, :test do
+  gem 'ffaker',     '~&gt; 2.1.0'
+end
+
+group :test do
+  gem 'database_cleaner'
+end
+
+group :production do
+  gem 'rails_12factor'
+  ....
+end
+</code></pre>
+
+</section>
+<section>
+
+<p><img src="images/rvm.png" alt="RVM"><br>
+Vous pouvez avoir autant de versions Ruby installées que vous voulez sur votre poste.<br>
+<a href="http://rvm.io/">Ruby Version Manager</a> (RVM) le détecte via <code>Gemfile</code> automatiquement.</p>
+
+</section>
+<section>
+
+<h3>Rails console à votre service:</h3>
+<p><img src="images/rails_console.png" alt="Rails Console"><br>
+Avec <code>rails c --sandbox</code> toute modification dans la BDD sera annulée à la sortie.</p>
+
+</section>
+<section>
+
+<p>Rails est installé avec son propre serveur d’application - <strong>Puma</strong>.<br>
+<img src="images/rails_server.png" alt="Rails server"></p>
+
+</section>
+<section>
+
+<p><img src="images/small_rails.png" alt="Rails small logo"></p>
+<h3>Qui utilise Ruby on Rails ?</h3>
+
+<ul>
+  <li><a href="https://github.com/">GitHub</a></li>
+  <li><a href="https://www.airbnb.com/">Airbnb</a></li>
+  <li><a href="http://www.hulu.com/">Hulu</a></li>
+  <li><a href="https://www.twitch.tv/">Twitch</a></li>
+  <li>
+<a href="https://basecamp.com/">Basecamp</a><br>
+et beaucoup d’autres… Ceux-ci ne sont que des grands.</li>
+</ul>
+
+</section>
+<section>
+
+<p>The front-end winner is<br>
+<img src="images/Ember%20on%20Light.png" alt="Ember logo"><br>
+A framework for creating ambitious web applications</p>
+
+</section>
+<section>
+
+<p><img src="images/Ember%20on%20Light.png" alt="Ember logo"></p>
+<ul>
+  <li>basé sur le pattern Model–view–viewmodel (MVVM)</li>
+  <li>Créé par <strong>Yehuda Katz</strong>
+</li>
+  <li>Première release: le 8 décember 2011</li>
+  <li>Dernière version: <strong>3.0</strong>, sortie le <strong>14 février 2018</strong>
+</li>
+</ul>
+
+</section>
+<section>
+
+<p><img src="images/ember_code_work.jpeg" alt="Ember CLI logo"><br>
+Il fournit quelques petites libraries JavaScript comme <strong>router.js</strong> pour routing, <strong>rsvp.js</strong> pour gérer les promises, <strong>backburner</strong> pour gérér le cycle d’exécution, et <strong>Handlebars</strong> pour le rendu de pages HTML.</p>
+
+</section>
+<section>
+
+<p><img src="images/Ember%20Data%20on%20Light.png" alt="Ember Data logo"><br>
+Utilisé par beaucoup de sites-web comme Discourse, Groupon, LinkedIn, Vine, Live Nation, Nordstrom, Twitch.tv,</p>
+
+</section>
+<section>
+
+<p><img src="images/Ember%20on%20Light.png" alt="Ember logo"><br>
+Considéré principalement comme framework Web, il est aussi possible de créer des applications Desktop et mobiles.<br>
+L’exemple le plus connu d’une app desktop est <strong>Apple Music</strong>, une fonctionnalité de <strong>iTunes</strong>.</p>
+
+</section>
+<section>
+
+<h3>Les briques principales de Ember</h3>
+<ul>
+  <li>
+<a href="https://guides.emberjs.com/v3.0.0/configuring-ember/configuring-ember-cli/">Ember CLI</a>: Un kit d’outils pour créer, développer et compiler applications Ember.</li>
+  <li>
+<a href="https://guides.emberjs.com/v3.0.0/routing/">Routing</a>: La partie centrale Ember.</li>
+  <li>
+<a href="https://guides.emberjs.com/v3.0.0/templates/handlebars-basics/">Templating engine</a> - Utilise la syntaxe <strong>Handlebars</strong> pour construire les templates HTML.</li>
+  <li>
+<a href="https://guides.emberjs.com/v3.0.0/models/">Data layer</a> - utilise Ember Data et permet de communiquer avec APIs externes et gérer l’état de l’application.</li>
+  <li>
+<a href="https://guides.emberjs.com/v3.0.0/ember-inspector/">Ember Inspector</a> - Extension de navigateur pour observer le comportement l’application.</li>
+</ul>
+
+</section>
+<section>
+
+<p><img src="images/yarn.png" alt="Yarn logo"><br>
+Un gestionnaire de dépendances rapide, fiable et sécurisé</p>
+
+</section>
+<section>
+
+<p><img src="images/ember_and_rails.jpeg" alt="Ember with Rails"></p>
+<h4>Le choix technique</h4>
+<ul>
+  <li>
+<strong>Rails API</strong> comme <a href="http://jsonapi.org/">JSON API</a> back-end</li>
+  <li>
+<strong>JWT</strong> authentication (Implicit grant flow)</li>
+  <li>
+<strong>Ember Simple Auth</strong> add-on (lightweight library for implementing authentication/authorization with Ember apps)</li>
+  <li>
+<strong>Bootstrap 4</strong> (CSS framework)</li>
+</ul>
+
+</section>
+<section>
+
+<p><img src="images/dont_believe.jpeg" alt="Dont believe"><br>
+On peut développer une app Ember sans avoir besoin de back-end!</p>
+
+</section>
+<section>
+
+<p><img src="images/mirage.jpeg" alt="Mirage"><br>
+Juste utilisez<br>
+add-on <a href="http://www.ember-cli-mirage.com/">EMBER-CLI MIRAGE</a></p>
+
+</section>
+<section>
+
+<p><strong>Mirage</strong> est un outil pour simuler un serveur API. Vous définissez vos <code>route handlers</code> pour répondre aux requests AJAX de votre application.</p>
+<pre><code>// mirage/config.js
+export default function() {
+  this.namespace = 'api';
+
+  this.get('/authors', () =&gt; {
+    return {
+      authors: [
+        {id: 1, name: 'Zelda'},
+        {id: 2, name: 'Link'},
+        {id: 3, name: 'Epona'},
+      ]
+    };
+  });
+}
+</code></pre>
+
+</section>
+<section>
+
+<p><img src="images/liquid_fire.jpg" alt="LIquid Fire"><br>
+Utiilisez animations et transitions fournies avec<br>
+<a href="https://ember-animation.github.io/liquid-fire/">Liquid Fire</a> dans votre app Ember JS</p>
+
+</section>
+<section>
+
+<p><img src="images/pierre.png" alt="Martin"></p>
+<h3>A quoi ressemble un projet Ruby on Rails ?</h3>
+
+</section>
+<section>
+
+<p><img src="images/rails_app.png" alt="Rails project"></p>
+
+</section>
+<section>
+
+<p><img src="images/olivier_cat.jpeg" alt="Olivier"></p>
+<h3>Et une aplication Ember ?</h3>
+
+</section>
+<section>
+
+<p><img src="images/ember_app.png" alt="Ember project"></p>
+
+</section>
+<section>
+
+<p>Déçu de Ruby on Rails en back-end ?<br>
+<img src="images/disappointed.jpg" alt="Disappointed"><br>
+Pas de problèmes, - replacer-le avec ce que vous voulez à condition que votre back-end envoie JSON <code>application/vnd.api+json</code>.<br>
+et <strong>Ember JS</strong> ferra son job comme avant.</p>
+
+</section>
+<section>
+
+<p>Ember JS ne vous convient pas non plus ?<br>
+<img src="images/disappointed.jpg" alt="Disappointed"><br>
+Pas trop grave non plus, - choisissez ce que vous aimez et branchez-le avec Ruby on Rails en back-end.</p>
+
+</section>
+<section>
+
+<h3>Comment faire avec les tests ?</h3>
+<p><img src="images/tests.png" alt="testing"><br>
+<a href="http://rspec.info/">RSpec</a> est choisi pour tester Ruby code et <a href="https://guides.emberjs.com/v2.18.0/testing/">QUnit</a> est un framework de test fourni par défaut avec Ember JS, mais plein d’autres sont disponibles via gems ou add-ons.</p>
+
+</section>
+<section>
+
+<p>RSpec vous permet de créer:</p>
+<ul>
+  <li>Model specs</li>
+  <li>Request specs</li>
+  <li>Controller specs</li>
+  <li>Feature specs</li>
+  <li>Mailer specs</li>
+  <li>Job specs</li>
+  <li>View specs</li>
+  <li>Routing specs</li>
+  <li>Helpers specs</li>
+</ul>
+
+</section>
+<section>
+
+<p>Un exemple de RSpec request test:</p>
+<pre><code>RSpec.describe "home page", :type =&gt; :request do
+  it "displays the user's username after successful login" do
+    user = FactoryGirl.create(:user, :username =&gt; "jdoe", :password =&gt; "secret")
+    visit "/login"
+    fill_in "Username", :with =&gt; "jdoe"
+    fill_in "Password", :with =&gt; "secret"
+    click_button "Log in"
+
+    expect(page).to have_selector(".header .username", :text =&gt; "jdoe")
+  end
+end
+</code></pre>
+
+</section>
+<section>
+
+<p>Par défault, lorsque vous créez un nouveau component, helper, service, ou un autre module dans une aplication Ember, Ember CLI va  automatiquement créer un fichier de test QUnit basé sur le générateur utilisé:</p>
+<ul>
+  <li>Components</li>
+  <li>Helpers</li>
+  <li>Controllers</li>
+  <li>Routes</li>
+  <li>Models</li>
+</ul>
+
+</section>
+<section>
+
+<h4>Et si jamais vous rencontrez une situation à comportement bizarre dans votre application ?</h4>
+
+<p><img class="emoji" alt=":thumbsup:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png"> Pas de soucis !</p>
+
+<p>Coté Ruby vous pouvez utiliser <strong>Byebug</strong> gem (default) ou creuser encore plus avec <a href="http://pryrepl.org/">Pry</a>.<br>
+<img src="images/pry_logo.png" alt="pry"></p>
+
+</section>
+<section>
+
+<p>Coté Ember il y a aussi excellent</p>
+<h3><a href="https://guides.emberjs.com/v2.18.0/ember-inspector/">Ember Inspector</a></h3>
+
+<p>un add-on du navigateur pour vous aider à debugger applications Ember.<br>
+Disponible pour Chrome, Firefox ou <a href="https://guides.emberjs.com/v2.18.0/ember-inspector/installation/#toc_via-bookmarklet">d’autres navigateurs</a> via bookmarklet.</p>
+
+<h3>Appareils Mobiles ?</h3>
+<p>Si jamaisi vous avez besoin d’utiliser Inspector sur un smartphone, vous pouvez installer un add-on Ember CLI Remote Inspector.</p>
+
+</section>
+<section>
+
+<p><img src="images/deploy.png" alt="Deploy"><br>
+Et comment faire pour le déploiement?</p>
+
+</section>
+<section>
+
+<h3>Outils de deploiement pour Ruby/Rails</h3>
+<ul>
+  <li><a href="http://capistranorb.com/">Capistrano</a></li>
+  <li><a href="https://www.phusionpassenger.com/">Phusion Passenger</a></li>
+  <li>
+<a href="https://www.engineyard.com/blog/running-rails-on-aws-know-your-options">Tools</a> pour EC2, Elastic Beanstalk, EC2 Container Service(Amazon) ou Engne Yard</li>
+  <li>
+<a href="https://devcenter.heroku.com/articles/heroku-cli">Heroku CLI</a> pour Heroku</li>
+  <li>En conteneur avec <a href="https://www.docker.com/">Docker</a>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h3>Outils de déploiement pour Ember JS</h3>
+<ul>
+  <li><a href="https://surge.sh/">Surge</a></li>
+  <li>
+<a href="https://devcenter.heroku.com/articles/heroku-cli">Heroku CLI</a> pour Heroku</li>
+  <li>
+<a href="https://github.com/ember-cli-deploy/ember-cli-deploy">ember-cli-deploy</a>, le plus compliqué mais aussi le plus flexible.</li>
+</ul>
+
+</section>
+<section>
+
+<p><img src="images/questions.jpg" alt="questions"><br>
+Questions ?</p>
+
+</section>
+<section>
+
+<p><img src="images/thank_you.png" alt="Thank you"></p>
+
+</section>
