@@ -187,12 +187,21 @@ Utilisé par beaucoup de sites-web comme Discourse, Groupon, LinkedIn, Vine, Liv
 Considéré principalement comme framework Web, il est aussi possible de créer des applications Desktop et mobiles.
 L'exemple le plus connu d'une app desktop est __Apple Music__, une fonctionnalité de __iTunes__.
 ---
-### Les briques principales de Ember
-- [Ember CLI](https://guides.emberjs.com/v3.0.0/configuring-ember/configuring-ember-cli/): Un kit d'outils pour créer, développer et compiler applications Ember.
-- [Routing](https://guides.emberjs.com/v3.0.0/routing/): La partie centrale Ember.
-- [Templating engine](https://guides.emberjs.com/v3.0.0/templates/handlebars-basics/) - Utilise la syntaxe __Handlebars__ pour construire les templates HTML.
-- [Data layer](https://guides.emberjs.com/v3.0.0/models/) - utilise Ember Data et permet de communiquer avec APIs externes et gérer l'état de l'application.
-- [Ember Inspector](https://guides.emberjs.com/v3.0.0/ember-inspector/) - Extension de navigateur pour observer le comportement l'application.
+## Les briques principales de Ember JS
+![Ember CLI logo](images/Ember CLI on Light.png)
+[Ember CLI](https://guides.emberjs.com/v3.0.0/configuring-ember/configuring-ember-cli/): Un kit d'outils pour créer, développer et compiler applications Ember.
+---
+![Ember router](images/ember_route.png)
+[Routing](https://guides.emberjs.com/v3.0.0/routing/): La partie centrale Ember.
+---
+![Handlebars logo](images/handlebars_logo.png)
+[Templating engine](https://guides.emberjs.com/v3.0.0/templates/handlebars-basics/) - Utilise la syntaxe __Handlebars__ pour construire les templates HTML.
+---
+![Ember Data Logo](images/Ember Data on Light.png)
+[Data layer](https://guides.emberjs.com/v3.0.0/models/) - utilise Ember Data et permet de communiquer avec APIs externes et gérer l'état de l'application.
+---
+![Ember Inspector](images/ember_inspector.png)
+[Ember Inspector](https://guides.emberjs.com/v3.0.0/ember-inspector/) - Extension de navigateur pour observer le comportement l'application.
 ---
 ![Yarn logo](images/yarn.png)
 Un gestionnaire de dépendances rapide, fiable et sécurisé
