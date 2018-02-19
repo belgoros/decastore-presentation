@@ -5,7 +5,7 @@
 by Serguei Cambour
 February 2018
 ---
-![Back-end vs Front-end](images/full-stack.png)
+![Back-end vs Front-end](images/frontend_backend.png)
 ---
 ![So many choices](images/many_choices.jpeg)
 ### Comment choisir parmi les frameworks existants ?
