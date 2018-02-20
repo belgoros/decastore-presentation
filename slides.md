@@ -213,6 +213,14 @@ Un gestionnaire de dépendances rapide, fiable et sécurisé
 - __Ember Simple Auth__ add-on (lightweight library for implementing authentication/authorization with Ember apps)
 - __Bootstrap 4__ (CSS framework)
 ---
+![ESA](images/ember_simple_auth.png)
+---
+### Ember Simple Auth:
+* maintient la session et synchronise son état à travers de multiples onglets et fenêtres de l'application.
+* authentifie la session contre propres serveurs d'applications, mas aussi services externes comme Facebook, Twitter etc.
+* authorize les requests vers serveurs backend.
+* facile à personnaliser et extensier
+---
 ![Dont believe](images/dont_believe.jpeg)
 On peut développer une app Ember sans avoir besoin de back-end!
 ---
