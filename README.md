@@ -18,4 +18,5 @@ The presentation uses [Reveal-ck](http://jedcn.github.io/reveal-ck/).
 - Navigate to your presentation project as `cd decastore-presentation` in your Terminal.
 - Run the command `reveal-ck generate` . Your slides will be created in the `slides/` directory.
 - You can run reveal-ck's built-in webserver with `reveal-ck serve`.
-- Open `slides/index.html` page in your preferred browser to see the result.
+- View the slide deck generated from this single file `slides.md` by opening your browser to http://localhost:10000.
+- You can also just open `slides/index.html` page in your preferred browser to see the result.
