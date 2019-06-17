@@ -4,7 +4,7 @@ The presentation explains the choice for [Ruby on Rails](http://rubyonrails.org/
 
 ### Installation
 
-You will need Ruby `2.4.0` and `reveal-ck` gem.
+You will need Ruby `2.6.1` and `reveal-ck` gem.
 Once Ruby installed, run `bundle install`.
 All the slides are coded in [Markdown](https://guides.github.com/features/mastering-markdown/#what) language and are in `slides.md` file.
 
